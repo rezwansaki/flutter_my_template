@@ -2,7 +2,7 @@
 
 My own template with step by step guideline for Flutter project (for flutter3), which helps me to create a new project and build Android app easily.
 
-![Alt text](screenshot.png "Flutter My Template - Flutter 3 Project")
+![Alt text](screenshot.png "Flutter My Template - Flutter 3 Project") </n>
 _screenshot with (300 x 533) px_
 
 ### The latest update:
