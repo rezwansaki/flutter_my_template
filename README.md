@@ -2,22 +2,30 @@
 
 My own template with step by step guideline for Flutter project (for flutter3), which helps me to create a new project and build Android app easily.
 
-![Alt text](screenshot.png "Flutter My Template - Flutter 3 Project") </n>
+![Alt text](screenshot.png "Flutter My Template - Flutter 3 Project")
 _screenshot with (300 x 533) px_
 
 ### The latest update:
 
 <ul>
-    <li>1. Firest.</li>
+    <li>1. First.</li>
     <li>2. Second.</li>
 </ul>
 
 ### Features:
 
 <ul>
-    <li>1. Firest feature.</li>
+    <li>1. First feature.</li>
     <li>2. Second feature.</li>
     <li>3. Third feature.</li>
+</ul>
+
+## Guidelines (How to use this template):
+
+<small>Note: Skip this section for other project or repository.</small>
+
+<ul>
+    <li>1. flutter clean</li>
 </ul>
 
 ## Instruction:
@@ -29,6 +37,7 @@ This is a flutter project, so there should be whatever you need to run the flutt
     <li>2. flutter pub get</li>
     <li>3. flutter run</li>
 </ul>
+<small>Note: These are for all other flutter repos but not for this repo. Because, I will not clone it, just create and build a new project using it and following its guidelines. In here, I have to follow the 'Guidelines' section.</small>
 
 ### Extra Packages used:
 
