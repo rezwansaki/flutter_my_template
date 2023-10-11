@@ -30,16 +30,20 @@ _screenshot with (300 x 533) px_
 flutter create --org com.alinsworld project_name
 ```
 
-২. প্রজেক্ট Open করবো VS Code Editor এ। এবং প্রজেক্ট ফোল্ডার এ সরাসরি ‘assets’ ফোল্ডার create করবো আর সেটা ‘pubspec.yaml’ ফাইল এ গিয়ে config করে দিবো। (শেষে ফাইল save করা -> flutter clean -> flutter pub get দিতে হবে।)
-
-৩. flutter_screenutil এবং flutter_dotenv ফ্লাটার প্যাকেজ ইনস্টল করবো।
+২. প্রজেক্ট Open করবো VS Code Editor এ। এবং flutter_screenutil এবং flutter_dotenv ফ্লাটার প্যাকেজ ইনস্টল করবো।
 
 <ul>
 <li>flutter_screenutil: ^5.9.0 (https://pub.dev/packages/flutter_screenutil)</li>
 <li>flutter_dotenv: ^5.1.0 (https://pub.dev/packages/flutter_dotenv)</li>
 </ul>
 
-৪. Global variables এর জন্য এই তিনটি ফাইল তৈরি করবো প্রজেক্ট ফোল্ডারের ভিতরে সরাসরি - ‘.env’, ‘.env.dev’, ‘.env.example’ এবং pubspec.yaml ফাইলে গিয়ে বলে দেবো ‘.env’, ‘.env.dev’ এই দুইটির ফাইলের কথা। এবার '.gitignore' গিয়ে ‘.env’, ‘.env.dev’ দুইটি ফাইলকে যুক্ত করে দেবো যেন GitHub এ push না হয়।
+৩. 'generate_files_folders.dart' ফাইলটি রান করবো, তাহলে আমার নিজের পছন্দ মত করে file and folder structure তৈরি হয়ে যাবে। চেক করলে দেখতে পাবো, প্রজেক্ট ফোল্ডার এ সরাসরি ‘assets’ ফোল্ডার create হয়েছে, .env ফাইল এবং lib ফোল্ডার এর ভিতরে প্রয়োজনীয় সকল ফোল্ডার তৈরি হয়ে যাবে। সেগুলোকে এবার একসেস করার জন্য পারমিশান দিতে হবে ‘pubspec.yaml’ ফাইল এ গিয়ে (গিটহাব প্রজেক্ট হতে pubspec.yaml ফাইলটি থেকে কপি করে বসাবো)। সবশেষে ফাইল save করবো এবং প্রয়োজনে flutter pub get কমান্ড প্রয়োগ করবো।
+
+নোট: এই dart ফাইলটি কোন file এবং folder আগে থেকে থাকলে সেটাকে বা সেগুলোকে replace করবে না।
+
+৪. '.gitignore' গিয়ে ‘.env’, ‘.env.dev’ দুইটি ফাইলকে যুক্ত করে দেবো যেন GitHub এ push না হয়। (গিটহাব প্রজেক্ট হতে '# Manually added by me' এই অংশ থেকে শুরু করে একদম নিচ পর্যন্ত সবটুকু কপি করে আমাদের প্রজেক্ট এ বসাবো।)
+
+Global variables এর জন্য তিনটি ফাইল প্রজেক্ট ফোল্ডারের ভিতরে সরাসরি রাখতে হয় - ‘.env’, ‘.env.dev’, ‘.env.example’ এবং pubspec.yaml ফাইলে গিয়ে config করতে হয় ‘.env’, ‘.env.dev’ এই দুইটি। এগুলোতে খুবই গুরুত্বপুর্ন তথ্য রাখা হয় যা public করা যাবে না।
 
 <ul>
 <li>‘.env’ - সকল গুরুত্বপুর্ন তথ্য থাকবে যা গিটহাব এ পুশ করবো না।</li>
@@ -47,7 +51,7 @@ flutter create --org com.alinsworld project_name
 <li>‘.env.example’ - একটা নমুনা ফাইল থাকবে যা '.env' এর মত কিন্তু কোন তথ্য থাকবে না। গিটহাব এ পুশ করা হবে।</li>
 </ul>
 
-এই template প্রজেক্ট এর main.dart ফাইল এর সকল কোড কপি করে লোকাল প্রজেক্ট এর main.dart ফাইল এ গিয়ে সব মুছে দিয়ে paste করবো।
+৫. আমাদের local প্রজেক্ট এ গিয়ে main.dart ফাইল সকল কোড remove করে দেবো এবং Github প্রজেক্ট এ গিয়ে main.dart ফাইল এর সকল কোড কপি করে আমাদের লোকাল প্রজেক্ট এ paste করে দেবো।
 (responsiveness এর জন্য) main.art ফাইল এর design এর সাইজটা বলে দিতে হবে -
 
 ```
@@ -71,24 +75,46 @@ designSize: const Size(360, 690),
 
 `8.0.r`
 
-এই template প্রজেক্ট এর '.gitignore' ফাইল এ গিয়ে '# Manually added by me' লেখাটি সহকারে একদম নিচ পর্যন্ত কপি করে নিজের প্রজেক্ট এর '.gitignore' ফাইলে বসাতে হবে।
-
-screens নামক একটি ফোল্ডার তৈরি করবো lib ফোল্ডার এর ভিতরে আর screens ফোল্ডার এর ভিতরে 'home_page.dart' নামক একটি স্টেটফুল অথবা স্টেটলেস ফাইল ক্রিয়েট করবো। main.dart ফাইল এ গিয়ে home_page.dart' ফাইলটি ইমপোর্ট করে দেবো।
+৬. lib ফোল্ডার এর ভিতরে screens সাব ফোল্ডার পাবো সেখানে গিয়ে 'home_page.dart' নামক একটি স্টেটফুল অথবা স্টেটলেস ফাইল ক্রিয়েট করবো। main.dart ফাইল এ গিয়ে home_page.dart' ফাইলটি ইমপোর্ট করে দেবো। এবার নিজের মত করে home_page.dart ফাইল নিয়ে কাজ করবো। প্রয়োজনে home_page.dart ফাইল এর নাম পরিবর্তন করবো তবে এর জন্য main.dart এ গিয়েও সেটা ঠিক করে দিয়ে আসতে হবে।
 
 lib ফোল্ডারটির ভিতরে -
-screens - সকল screens/pages
-widgets - সকল widgets যা সকল স্থান হতে একসেস করা যাবে।
 controllers - সকল ফাংশন।
 models - ডাটা মডেল।
-providers - প্রোভাইডার, যদি প্রয়োজন হয়।
+screens - সকল screens/pages থাকবে।
+widgets - সকল widgets যা সকল স্থান হতে একসেস করা যাবে।
+
 আর assets ফোল্ডারে থাকবে -
 ডিজাইন করতে যে সকল images, icons, fonts ইত্যাদি প্রয়োজন হয়েছে আর data ফোল্ডার যদি offline database নিয়ে কাজ করা হয়। তবে এক্ষেত্রে খেয়াল রাখতে হবে যেন গুরুত্বপুর্ন তথ্য সেই ডাটাবেজ এ না থাকে যা পাবলিক করা যাবে না।
 
-৫. এবার কাজ শুরু করতে হবে। এ্যাপ ডিবাগ করবো টারমিনাল এ ‌‌'flutter run' কমান্ড দিয়ে আর 'r' প্রেস করে 'hot reload' করবো, তাহলে কাজ কিছুটা হলেও দ্রুত হবে। সমস্যা হলে 'Shift+r' প্রেস করবো 'Hot Restart' এর জন্য।
+৭. App sign করতে হবে:
+key.properties ফাইল আর key.jks ফাইল ব্যবহার করে Sign করতে হবে। আমার কাছে থাকা key.properties ফাইলটি কপি করে প্রজেক্ট ফোল্ডার এর ভিতরে সরাসরি রেখে দেবো। এতে সব সাজিয়ে রাখাই আছে। key.jks ফাইল কোথায় আছে সেটা বলে দেয়া আছে।
 
-৬. কাজ শেষে key.properties ফাইল আর key.jks ফাইল ব্যবহার করে Sign করতে হবে। -> android/app/build.gradle ফাইল হতে minSdk, targetSdk, compileSdk ঠিক করে দিতে হবে। -> pubspec.yaml ফাইল হতে app information যেমন, app name, description এবং app version ঠিক করে দিতে হবে। -> app permission যেমন, internet permission, move to sd permission ইত্যাদি এর জন্য AndroidManifest.xml ফাইল এর ভিতরে বলে দিতে হবে। -> এ্যাপ চালু থাকলে ক্লোজ করতে হবে এবং এ্যাপ ক্লিন করে নিতে হবে এরপর নতুন করে রান করতে হবে। এবার বীল্ড করতে হবে। -> বীল্ড করার পর key.properties ফাইল সেখান হতে মুছে দিতে হবে অথবা সরিয়ে নিতে হবে। ‘key.jks’ ফাইল প্রজেক্ট এ রাখা হয় না, না হলে সেটাও সরিয়ে নিতে হবে। -> .gitignore এ গিয়ে এই ফাইলটি আর এর সাথে key.jks ফাইলটিও যুক্ত করতে হবে এবং দেখতে হবে কোন confidential information such as login information with password, restricted api ইত্যাদি থাকলে সেগুলোও পুশ যেন না হয় সেদিকে খেয়াল রাখবো। আর সেগুলো যে ছিল তার একটা hints দিয়ে sample ফাইল তৈরি করে পুশ করে দেবো, যেন পরে সেগুলো কনফিগার করা যায়। -> কাজ করবো width 1080px এ কিন্তু test করবো একদম শেষে আরও দুইটি বা তিনটি ডিভাইসে যাদের resolution 1080px হতে কম আর বেশি।
+build.gradle ফাইলটি config করতে হবে:
+android/app/build.gradle ফাইল হতে minSdk, targetSdk, compileSdk ঠিক করে দিতে হবে।
 
-৭. এবার distribution এর জন্য যা যা করার করতে হবে। -> README.md ফাইল এ ছবিসহকারে সব কিছু গুছিয়ে লিখে রাখতে হবে যে লেখাগুলো পাবলিক হলে সমস্যা নাই। এই Template প্রজেক্ট এর README.md ফাইল ওপেন করে সকল কোড কপি করে নিয়ে আমাদের প্রজেক্ট ফোল্ডার এর README.md ফাইল এ গিয়ে paste করবো। এবার আমাদের প্রজেক্ট অনুযায়ী ফাইলটি পরিবর্তন করবো, সাজাবো। -> একটি screenshot নিতে হবে প্রজেক্ট রান করার পর যার নাম দেবো 'screenshot.png' এবং সাইজ হবে (300 x 533) px এবং সেটা প্রজেক্ট ফোল্ডার এর ভিতরে সরাসরি রাখতে হবে। -> এই Template প্রজেক্ট এর 'flutter_logo.svg' ফাইলটি কপি করে আমাদের প্রজেক্ট এর ভিতরে সরাসরি রাখবো। আমাদের প্রজেক্ট এর ReadMe.md ফাইল এর 'Instruction' বিভাগ এর নিচে ছোট 'small' ট্যাগ এর লেখাগুলো মুছে দিতে হবে। এরপর 'Guidelines (How to use this template)' এই বিভাগটি সম্পুর্ন মুছে দিতে হবে। কারন এগুলো ছিল শুধুমাত্র Template প্রজেক্টটির জন্যই।
+App information ঠিক করে দিতে হবে:
+pubspec.yaml ফাইল হতে app information যেমন- app name, description এবং app version ঠিক করে দিতে হবে।
+
+AndroidManifest.xml এ গিয়ে কিছু permission দিতে হবে যদি প্রয়োজন হয়:
+permission যেমন- internet permission, move to sd permission ইত্যাদি এর জন্য AndroidManifest.xml ফাইল এর ভিতরে বলে দিতে হবে।
+
+build করার জন্য:
+এ্যাপ চালু থাকলে ক্লোজ করতে হবে এবং এ্যাপ ক্লিন করে নিতে হবে এরপর নতুন করে রান করতে হবে। এবার প্রয়োজন হলে বীল্ড করতে হবে। -> বীল্ড করার পর key.properties ফাইল সেখান হতে মুছে দিতে হবে অথবা সরিয়ে নিতে হবে।
+
+(‘key.jks’ ফাইল প্রজেক্ট এ রাখা হয় না, না হলে সেটাও সরিয়ে নিতে হবে। -> .gitignore এ গিয়ে এই দুইটি ফাইল চেক করতে হবে যুক্ত করা আছে কিনা, না হলে যুক্ত করতে হবে। দেখতে হবে কোন confidential information such as login information with password, restricted api ইত্যাদি থাকলে সেগুলোও পুশ যেন না হয় সেদিকে খেয়াল রাখবো। আর প্রয়োজনে কি কি তথ্য ছিল ছিল তার একটা hints দিয়ে .env.example ফাইল এ লিখে রাখবো। এই ফাইলটি গিটহাব এ push হবে। কাজ করবো width 1080px এ কিন্তু test করবো একদম শেষে আরও দুইটি বা তিনটি ডিভাইসে যাদের resolution 1080px হতে কম আর বেশি।)
+
+৮. এবার কাজ শুরু করতে হবে। এ্যাপ ডিবাগ করবো টারমিনাল এ ‌‌'flutter run' কমান্ড দিয়ে আর 'r' প্রেস করে 'hot reload' করবো, তাহলে কাজ কিছুটা হলেও দ্রুত হবে। সমস্যা হলে 'Shift+r' প্রেস করবো 'Hot Restart' এর জন্য।
+
+৯. সবশেষে build করবো এবং distribution এর জন্য যা যা করার করতে হবে। -> README.md ফাইল এ ছবিসহকারে সব কিছু গুছিয়ে লিখে রাখতে হবে যে লেখাগুলো পাবলিক হলে সমস্যা নাই। গিটহাব এর এই Template প্রজেক্ট এর README.md ফাইল ওপেন করে সকল কোড কপি করে নিয়ে আমাদের প্রজেক্ট ফোল্ডার এর README.md ফাইল এ গিয়ে paste করবো। এবার আমাদের প্রজেক্ট অনুযায়ী ফাইলটি পরিবর্তন করবো, সাজাবো।
+
+screenshot নিতে হবে:
+একটি screenshot নিতে হবে প্রজেক্ট রান করার পর যার নাম দেবো 'screenshot.png' এবং সাইজ হবে (300 x 533) px এবং সেটা প্রজেক্ট ফোল্ডার এর ভিতরে সরাসরি রাখতে হবে।
+
+flutter_logo.svg ফাইলটি নিতে হবে:
+গিটহাব এর এই Template প্রজেক্ট এর 'flutter_logo.svg' ফাইলটি কপি করে আমাদের প্রজেক্ট এর ভিতরে সরাসরি রাখবো।
+
+ReadMe.md ফাইল এর যেগুলো মুছে দিতে হবে:
+আমাদের প্রজেক্ট এর ReadMe.md ফাইল এর 'Instruction' বিভাগ এর নিচে ছোট 'small' ট্যাগ এর লেখাগুলো মুছে দিতে হবে। এরপর 'Guidelines (How to use this template)' এই বিভাগটি সম্পুর্ন মুছে দিতে হবে। কারন এগুলো ছিল শুধুমাত্র Template প্রজেক্টটির জন্যই।
 
 ## Instruction:
 
