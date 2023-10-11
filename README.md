@@ -96,16 +96,49 @@ App information ঠিক করে দিতে হবে:
 pubspec.yaml ফাইল হতে app information যেমন- app name, description এবং app version ঠিক করে দিতে হবে।
 
 AndroidManifest.xml এ গিয়ে কিছু permission দিতে হবে যদি প্রয়োজন হয়:
-permission যেমন- internet permission, move to sd permission ইত্যাদি এর জন্য AndroidManifest.xml ফাইল এর ভিতরে বলে দিতে হবে।
+permission যেমন- internet permission, move to sd permission ইত্যাদি এর জন্য AndroidManifest.xml ফাইল এর ভিতরে বলে দিতে হবে। নিচের মত করে লিখতে হবে -
 
-build করার জন্য:
-এ্যাপ চালু থাকলে ক্লোজ করতে হবে এবং এ্যাপ ক্লিন করে নিতে হবে এরপর নতুন করে রান করতে হবে। এবার প্রয়োজন হলে বীল্ড করতে হবে। -> বীল্ড করার পর key.properties ফাইল সেখান হতে মুছে দিতে হবে অথবা সরিয়ে নিতে হবে।
+```
+ android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+```
 
-(‘key.jks’ ফাইল প্রজেক্ট এ রাখা হয় না, না হলে সেটাও সরিয়ে নিতে হবে। -> .gitignore এ গিয়ে এই দুইটি ফাইল চেক করতে হবে যুক্ত করা আছে কিনা, না হলে যুক্ত করতে হবে। দেখতে হবে কোন confidential information such as login information with password, restricted api ইত্যাদি থাকলে সেগুলোও পুশ যেন না হয় সেদিকে খেয়াল রাখবো। আর প্রয়োজনে কি কি তথ্য ছিল ছিল তার একটা hints দিয়ে .env.example ফাইল এ লিখে রাখবো। এই ফাইলটি গিটহাব এ push হবে। কাজ করবো width 1080px এ কিন্তু test করবো একদম শেষে আরও দুইটি বা তিনটি ডিভাইসে যাদের resolution 1080px হতে কম আর বেশি।)
+```
+android:screenOrientation="portrait"
+```
+
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+    <application
+android.permission.INTERNET
+android.permission.SEND_SMS
+android.permission.CAMERA
+```
 
 ৮. এবার কাজ শুরু করতে হবে। এ্যাপ ডিবাগ করবো টারমিনাল এ ‌‌'flutter run' কমান্ড দিয়ে আর 'r' প্রেস করে 'hot reload' করবো, তাহলে কাজ কিছুটা হলেও দ্রুত হবে। সমস্যা হলে 'Shift+r' প্রেস করবো 'Hot Restart' এর জন্য।
 
-৯. সবশেষে build করবো এবং distribution এর জন্য যা যা করার করতে হবে। -> README.md ফাইল এ ছবিসহকারে সব কিছু গুছিয়ে লিখে রাখতে হবে যে লেখাগুলো পাবলিক হলে সমস্যা নাই। গিটহাব এর এই Template প্রজেক্ট এর README.md ফাইল ওপেন করে সকল কোড কপি করে নিয়ে আমাদের প্রজেক্ট ফোল্ডার এর README.md ফাইল এ গিয়ে paste করবো। এবার আমাদের প্রজেক্ট অনুযায়ী ফাইলটি পরিবর্তন করবো, সাজাবো।
+৯. Launcher icon এবং Splash screen তৈরি করবো এ্যাপ এর জন্য:
+'\android\app\src\main\res' এখানে গিয়ে দেখতে পাবো 'mipmap-hdpi\ic_launcher.png' আইকনটি। আমাদের আইকনটি রেখে দেবো কিন্তু নামটি একই রাখবো তাহলে আর অতিরিক্ত config করতে হবে না। সব আইকন এর জন্যই একই কাজ করতে হবে। আর Splash screen এর জন্য 'flutter_native_splash: ^0.1.9' এই প্যাকেজটি ব্যবহার করতে পারি।
+
+১০. সবশেষে build করবো:
+এ্যাপ চালু থাকলে ক্লোজ করতে হবে এবং এ্যাপ ক্লিন করে নিতে হবে এরপর নতুন করে রান করতে হবে। এবার build করতে হবে।
+সকল platform এর জন্য বীল্ড করতে চাইলে -
+
+```
+flutter build apk
+```
+
+অথবা ভিন্ন ভিন্ন platform অনুযায়ী বীল্ড করতে চাইলে -
+
+```
+flutter build apk --split-per-abi
+```
+
+key.properties ফাইল মুছে ফেলা:
+বীল্ড করার পর key.properties ফাইল সেখান হতে মুছে দিতে হবে অথবা সরিয়ে নিতে হবে।
+
+(‘key.jks’ ফাইল প্রজেক্ট এ রাখা হয় না, না হলে সেটাও সরিয়ে নিতে হবে। -> .gitignore এ গিয়ে এই দুইটি ফাইল চেক করতে হবে যুক্ত করা আছে কিনা, না হলে যুক্ত করতে হবে। দেখতে হবে কোন confidential information such as login information with password, restricted api ইত্যাদি থাকলে সেগুলোও পুশ যেন না হয় সেদিকে খেয়াল রাখবো। আর প্রয়োজনে কি কি তথ্য ছিল ছিল তার একটা hints দিয়ে .env.example ফাইল এ লিখে রাখবো। এই ফাইলটি গিটহাব এ push হবে। কাজ করবো width 1080px এ কিন্তু test করবো একদম শেষে আরও দুইটি বা তিনটি ডিভাইসে যাদের resolution 1080px হতে কম আর বেশি।)
+
+এবং distribution এর জন্য যা যা করার করতে হবে। -> README.md ফাইল এ ছবিসহকারে সব কিছু গুছিয়ে লিখে রাখতে হবে যে লেখাগুলো পাবলিক হলে সমস্যা নাই। গিটহাব এর এই Template প্রজেক্ট এর README.md ফাইল ওপেন করে সকল কোড কপি করে নিয়ে আমাদের প্রজেক্ট ফোল্ডার এর README.md ফাইল এ গিয়ে paste করবো। এবার আমাদের প্রজেক্ট অনুযায়ী ফাইলটি পরিবর্তন করবো, সাজাবো।
 
 screenshot নিতে হবে:
 একটি screenshot নিতে হবে প্রজেক্ট রান করার পর যার নাম দেবো 'screenshot.png' এবং সাইজ হবে (300 x 533) px এবং সেটা প্রজেক্ট ফোল্ডার এর ভিতরে সরাসরি রাখতে হবে।
