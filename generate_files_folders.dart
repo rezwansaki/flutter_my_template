@@ -1,6 +1,7 @@
 import 'dart:io';
 
 //'dart run <dartFileNameWithExtension>' to run a dart file from terminal
+//example: 'dart run generate_files_folders.dart'
 
 void main() async {
   print(
@@ -16,6 +17,7 @@ void main() async {
     'lib/widgets',
     'lib/controllers',
     'lib/models',
+    'lib/constant',
   ];
 
   for (var i = 0; i < dirArray.length; i++) {
@@ -33,7 +35,9 @@ void main() async {
     '.env',
     '.env.dev',
     '.env.example',
-    'lib/controllers/default_controller.dart'
+    'lib/controllers/default_controller.dart',
+    'lib/constant/colors.dart',
+    'lib/constant/variables.dart',
   ];
   for (var i = 0; i < fileArray.length; i++) {
     final myFile = File(fileArray[i]);
@@ -49,5 +53,5 @@ void main() async {
   print('\nPlease, check your project for those folders and files!\n');
 
   print(
-      'This script is created by Alin (https://www.alinsworld.com/). [version: 1.0.0, date: 12-October-2023]');
+      'This script is created by Alin (https://www.alinsworld.com/). [version: 1.0.1, date: 14-October-2023]');
 }

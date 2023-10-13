@@ -37,7 +37,13 @@ flutter create --org com.alinsworld project_name
 <li>flutter_dotenv: ^5.1.0 (https://pub.dev/packages/flutter_dotenv)</li>
 </ul>
 
-৩. 'generate_files_folders.dart' ফাইলটি রান করবো, তাহলে আমার নিজের পছন্দ মত করে file and folder structure তৈরি হয়ে যাবে। চেক করলে দেখতে পাবো, প্রজেক্ট ফোল্ডার এ সরাসরি ‘assets’ ফোল্ডার create হয়েছে, .env ফাইল এবং lib ফোল্ডার এর ভিতরে প্রয়োজনীয় সকল ফোল্ডার তৈরি হয়ে যাবে। সেগুলোকে এবার একসেস করার জন্য পারমিশান দিতে হবে ‘pubspec.yaml’ ফাইল এ গিয়ে (গিটহাব প্রজেক্ট হতে pubspec.yaml ফাইলটি থেকে কপি করে বসাবো)। সবশেষে ফাইল save করবো এবং প্রয়োজনে flutter pub get কমান্ড প্রয়োগ করবো।
+৩. 'generate_files_folders.dart' ফাইলটি Github প্রজেক্টটি থেকে কপি করে আমাদের প্রজেক্টে সরাসরি রাখবো এবং terminal এ গিয়ে রান করবো:
+
+```
+dart run generate_files_folders.dart
+```
+
+এতে করে আমার নিজের পছন্দ মত file এবং folder structure তৈরি হয়ে যাবে। চেক করলে দেখতে পাবো, প্রজেক্ট ফোল্ডার এ সরাসরি ‘assets’ ফোল্ডার, .env ফাইল এবং lib ফোল্ডার এর ভিতরে প্রয়োজনীয় সকল ফোল্ডার তৈরি হয়ে যাবে। ‘assets’ ফোল্ডার এবং '.env', '.env.dev' ফাইল একসেস করার জন্য পারমিশান দিতে হবে ‘pubspec.yaml’ ফাইল এ গিয়ে (গিটহাব প্রজেক্ট হতে pubspec.yaml ফাইলটি থেকে কপি করে বসাবো)। সবশেষে ফাইল save করবো এবং প্রয়োজনে flutter pub get কমান্ড প্রয়োগ করবো।
 
 নোট: এই dart ফাইলটি কোন file এবং folder আগে থেকে থাকলে সেটাকে বা সেগুলোকে replace করবে না।
 
@@ -82,6 +88,7 @@ controllers - সকল ফাংশন।
 models - ডাটা মডেল।
 screens - সকল screens/pages থাকবে।
 widgets - সকল widgets যা সকল স্থান হতে একসেস করা যাবে।
+constant – এ্যাপ এ যে সকল color ব্যবহার করা হবে সেগুলো আর global variables যা .env তে রাখার প্রয়োজন নাই সেগুলো থাকবে।
 
 আর assets ফোল্ডারে থাকবে -
 ডিজাইন করতে যে সকল images, icons, fonts ইত্যাদি প্রয়োজন হয়েছে আর data ফোল্ডার যদি offline database নিয়ে কাজ করা হয়। তবে এক্ষেত্রে খেয়াল রাখতে হবে যেন গুরুত্বপুর্ন তথ্য সেই ডাটাবেজ এ না থাকে যা পাবলিক করা যাবে না।
@@ -195,7 +202,7 @@ Minimum SDK Version: 21 (Android 5.0 or, Lollipop) and Target SDK Version: 34 (A
 
 ### Project/App Version:
 
-version: 1.1.0 (12-October-2023)
+version: 1.1.1 (14-October-2023)
 <small>(This information has been taken from 'pubspec.yaml' file.)</small>
 
 ### Start Date:
@@ -204,7 +211,7 @@ version: 1.1.0 (12-October-2023)
 
 ### Last Update:
 
-12-Oct-2023
+14-Oct-2023
 
 ### App size:
 
