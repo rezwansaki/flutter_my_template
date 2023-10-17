@@ -210,7 +210,7 @@ Minimum SDK Version: 21 (Android 5.0 or, Lollipop) and Target SDK Version: 34 (A
 ### Project/App Version:
 
 version: 1.1.1 (14-October-2023) <br />
-<small>(This information has been taken from 'pubspec.yaml' file.)</small>
+<sup><sub>(This information has been taken from 'pubspec.yaml' file.)</sub></sup>
 
 ### Start Date:
 
