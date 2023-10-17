@@ -110,23 +110,16 @@ android/app/build.gradle ফাইল হতে minSdk, targetSdk, compileSdk �
 pubspec.yaml ফাইল হতে app information যেমন- app name, description এবং app version ঠিক করে দিতে হবে।
 
 **AndroidManifest.xml এ গিয়ে কিছু permission দিতে হবে যদি প্রয়োজন হয়:** <br />
-permission যেমন- internet permission, move to sd permission ইত্যাদি এর জন্য AndroidManifest.xml ফাইল এর ভিতরে বলে দিতে হবে। নিচের মত করে লিখতে হবে -
+permission যেমন- internet permission, sms sending permission ইত্যাদি এর জন্য '\android\app\src\main\AndroidManifest.xml' ফাইল এ বলে দিতে হবে। নিচের মত করে লিখতে হবে -
 
 ```
- android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-```
-
-```
-android:screenOrientation="portrait"
-```
-
-```
-<uses-permission android:name="android.permission.INTERNET"/>
+<manifest xmlns:android ...>
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
-android.permission.INTERNET
-android.permission.SEND_SMS
-android.permission.CAMERA
 ```
+
+নোট: manifest ট্যাগ এর পরে আর application ট্যাগ এর আগে uses-permission ট্যাগ ব্যবহার করে বলে দিতে হবে।
 
 ৮. এবার কাজ শুরু করতে হবে। এ্যাপ ডিবাগ করবো টারমিনাল এ ‌‌'flutter run' কমান্ড দিয়ে আর 'r' প্রেস করে 'hot reload' করবো, তাহলে কাজ কিছুটা হলেও দ্রুত হবে। সমস্যা হলে 'Shift+r' প্রেস করবো 'Hot Restart' এর জন্য।
 
