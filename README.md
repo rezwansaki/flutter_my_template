@@ -30,7 +30,7 @@ _screenshot with (300 x 533) px_
 flutter create --org com.alinsworld project_name
 ```
 
-২. প্রজেক্ট Open করবো VS Code Editor এ। এবং flutter_screenutil এবং flutter_dotenv ফ্লাটার প্যাকেজ ইনস্টল করবো।
+২. প্রজেক্ট Open করবো VS Code Editor এ এবং flutter_screenutil এবং flutter_dotenv ফ্লাটার প্যাকেজ ইনস্টল করবো।
 
 <ul>
 <li>flutter_screenutil: ^5.9.0 (https://pub.dev/packages/flutter_screenutil)</li>
