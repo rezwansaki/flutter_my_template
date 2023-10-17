@@ -189,12 +189,10 @@ This is a flutter project, so there should be whatever you need to run the flutt
 
 ### Problems (All that work is left):
 
-There are some issues that have not been fixed. </br>
-Such as: </br>
+There are some issues that have not been fixed. <br />
+Such as: <br />
 
-<ul>
-<li>1. Sample problem</li>
-</ul>
+- 1.Sample problem
 
 ### Requires Android:
 
@@ -202,20 +200,16 @@ Minimum SDK Version: 21 (Android 5.0 or, Lollipop) and Target SDK Version: 34 (A
 
 ### Tested On:
 
-<ul>
-<li>Emulator: Nexus_5X_API_29</li>
-<li>Real Device: Samsung Galaxy J7</li>
-</ul>
+- Emulator: Nexus_5X_API_29
+- Real Device: Samsung Galaxy J7
 
 ### Used tools and programming languages:
 
-<ul>
-<li>Flutter 3.13.2</li>
-</ul>
+- Flutter 3.13.2
 
 ### Project/App Version:
 
-version: 1.1.1 (14-October-2023)
+version: 1.1.1 (14-October-2023) <br />
 <small>(This information has been taken from 'pubspec.yaml' file.)</small>
 
 ### Start Date:
@@ -224,16 +218,16 @@ version: 1.1.1 (14-October-2023)
 
 ### Last Update:
 
-17-Oct-2023
+18-Oct-2023
 
 ### App size:
 
-00.00 MB (After build on APK for all platform)
+00.00 MB (After build on APK for all platform) <br />
 00.00 MB (After build on APK for specific platform)
 
 ### Developed by:
 
-Md. Rezwan Saki Alin
+Md. Rezwan Saki Alin <br />
 https://www.alinsworld.com/
 
 ## License
