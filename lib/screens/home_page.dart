@@ -7,18 +7,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Home Page'),
-        ),
-        body: Center(
-          child: Text(
-            dotenv.env['API_BASE_URL'] ?? 'API_BASE_URL not found',
-            style: TextStyle(
-              fontSize: 18.sp,
-              color: Colors.black,
-            ),
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Home Page'),
           ),
-        ));
+          body: Center(
+            child: Text(
+              dotenv.env['API_BASE_URL'] ?? 'API_BASE_URL not found',
+              style: TextStyle(
+                fontSize: 18.sp,
+                color: Colors.black,
+              ),
+            ),
+          )),
+    );
   }
 }
