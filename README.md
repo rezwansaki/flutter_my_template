@@ -87,7 +87,7 @@ designSize: const Size(360, 690),
 
 `8.0.r`
 
-৬. lib ফোল্ডার এর ভিতরে screens সাব ফোল্ডার পাবো সেখানে গিয়ে 'home_page.dart' নামক একটি স্টেটফুল অথবা স্টেটলেস ফাইল ক্রিয়েট করবো (see home_page.dart for format)। main.dart ফাইল এ গিয়ে home_page.dart' ফাইলটি ইমপোর্ট করে দেবো। এবার নিজের মত করে home_page.dart ফাইল নিয়ে কাজ করবো। প্রয়োজনে home_page.dart ফাইল এর নাম পরিবর্তন করবো তবে এর জন্য main.dart এ গিয়েও সেটা ঠিক করে দিয়ে আসতে হবে।
+৬. lib ফোল্ডার এর ভিতরে screens সাব ফোল্ডার পাবো সেখানে গিয়ে 'home_page.dart' নামক একটি স্টেটফুল অথবা স্টেটলেস ফাইল ক্রিয়েট করবো (see: home_page.dart for format)। main.dart ফাইল এ গিয়ে home_page.dart' ফাইলটি ইমপোর্ট করে দেবো। এবার নিজের মত করে home_page.dart ফাইল নিয়ে কাজ করবো। প্রয়োজনে home_page.dart ফাইল এর নাম পরিবর্তন করবো তবে এর জন্য main.dart এ গিয়েও সেটা ঠিক করে দিয়ে আসতে হবে।
 
 lib ফোল্ডারটির ভিতরে - <br />
 controllers - সকল ফাংশন। <br />
@@ -202,7 +202,7 @@ Minimum SDK Version: 21 (Android 5.0 or, Lollipop) and Target SDK Version: 34 (A
 
 ### Project/App Version:
 
-version: 1.1.1 (14-October-2023) <br />
+version: 1.2.1+2 (09-Dec-2023) <br />
 <sub>(This information has been taken from 'pubspec.yaml' file.)</sub>
 
 ### Start Date:
@@ -211,7 +211,7 @@ version: 1.1.1 (14-October-2023) <br />
 
 ### Last Update:
 
-18-Oct-2023
+09-Dec-2023
 
 ### App size:
 

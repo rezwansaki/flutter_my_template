@@ -4,6 +4,7 @@ import 'dart:io';
 //example: 'dart run generate_files_folders.dart'
 
 void main() async {
+  // ignore: avoid_print
   print(
       'This script will generate the folder and file structure for Flutter 3. It will create some folders like assets, images, fonts, screens, controllers and some files like .env, .env.dev etc. You need .env, .env.dev, .env.example files when you use flutter_dotenv package.\n');
 
@@ -24,10 +25,12 @@ void main() async {
     final myDir = Directory(dirArray[i]);
     var isThere = await myDir.exists();
     if (isThere) {
-      print(dirArray[i] + ' folder is already exist.');
+      // ignore: avoid_print
+      print('${dirArray[i]} folder is already exist.');
     } else {
       var directory = await Directory(dirArray[i]).create(recursive: true);
-      print(directory.path + ' folder has been created.');
+      // ignore: avoid_print
+      print('${directory.path} folder has been created.');
     }
   }
 
@@ -43,15 +46,19 @@ void main() async {
     final myFile = File(fileArray[i]);
     var isThere = await myFile.exists();
     if (isThere) {
-      print(fileArray[i] + ' file is already exist.');
+      // ignore: avoid_print
+      print('${fileArray[i]} file is already exist.');
     } else {
       var file = await File(fileArray[i]).create(recursive: true);
+      // ignore: avoid_print, prefer_interpolation_to_compose_strings
       print(file.path + ' file has been created.');
     }
   }
 
+  // ignore: avoid_print
   print('\nPlease, check your project for those folders and files!\n');
 
+  // ignore: avoid_print
   print(
       'This script is created by Alin (https://www.alinsworld.com/). [version: 1.0.1, date: 14-October-2023]');
 }
