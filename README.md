@@ -223,23 +223,19 @@ Minimum SDK Version: 21 (Android 5.0 or, Lollipop) and Target SDK Version: 34 (A
 
 - Flutter 3.13.2
 
-### Project/App Version:
-
+### Apk Information:
 version: 1.2.1+2 (09-Dec-2023) <br />
 <sub>(This information has been taken from 'pubspec.yaml' file.)</sub>
 
-### Start Date:
+#### Apk size:
+00.00 MB (After build on APK for all platform) <br />
+00.00 MB (After build on APK for specific platform)
 
+### Start Date:
 03-Oct-2023
 
 ### Last Update:
-
 09-Dec-2023
-
-### App size:
-
-00.00 MB (After build on APK for all platform) <br />
-00.00 MB (After build on APK for specific platform)
 
 ### Developed by:
 
