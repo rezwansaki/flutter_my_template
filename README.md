@@ -35,6 +35,8 @@ flutter create --org com.alinsworld project_name
 <ul>
 <li>flutter_screenutil: ^5.9.0 (https://pub.dev/packages/flutter_screenutil)</li>
 <li>flutter_dotenv: ^5.1.0 (https://pub.dev/packages/flutter_dotenv)</li>
+<li>get: ^4.6.6 - GetX for State Management, Easily navigate and other (https://pub.dev/packages/get)</li>
+GetX এখানে ইনস্টল করা হয়েছে কিন্তু কি করে ব্যবহার করতে হয়, সেগুলো কিছু করা হয় নাই। পরে লেখা হবে। 
 </ul>
 
 ৩. নিজের মত করে ফাইল ও ফোল্ডার সাজানো এবং ফাইল/ফোল্ডার পারমিশান দেয়া - <br />
@@ -201,6 +203,7 @@ This is a flutter project, so there should be whatever you need to run the flutt
 <ul>
     <li>1. flutter_screenutil: ^5.9.0 - for responsie app design.</li>
     <li>2. flutter_dotenv - for global environment variables</li>
+    <li>3. get: ^4.6.6 - GetX for State Management and other</li>  
 </ul>
 
 ### Problems (All that work is left):
